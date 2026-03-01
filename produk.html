@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kategori Produk - Umi Kaureen</title>
+    <style>
+        /* --- RESET & BASE --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #0b5ed7;
+            /* Efek Salju Bergerak */
+            background-image: 
+                radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.2) 1.5px, transparent 1.5px),
+                radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.1) 2px, transparent 2px),
+                linear-gradient(180deg, #0b5ed7, #084298);
+            background-size: 100px 100px, 200px 200px, 100% 100%;
+            animation: snowMove 12s linear infinite;
+            color: #fff;
+            padding-bottom: 50px;
+        }
+
+        @keyframes snowMove {
+            from { background-position: 0 0, 0 0, 0 0; }
+            to { background-position: 100px 100px, 200px 400px, 0 0; }
+        }
+
+        /* --- HEADER & NAVBAR --- */
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(5px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-area img {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            object-fit: cover;
+        }
+
+        .brand-name {
+            font-weight: bold;
+            font-size: 1.3rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 5px;
+        }
+
+        .nav-links li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px 20px;
+            position: relative;
+            transition: 0.3s;
+            z-index: 1;
+            font-size: 14px;
+        }
+
+        /* --- EFEK STABILO --- */
+        .nav-links li a::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: #a3d8ff;
+            transition: 0.3s ease;
+            z-index: -1;
+            border-radius: 4px;
+        }
+
+        .nav-links li a:hover::before {
+            width: 100%;
+        }
+
+        .nav-links li a:hover {
+            color: #084298;
+        }
+
+        /* --- CONTENT --- */
+        .page-title {
+            text-align: center;
+            margin: 40px 0;
+            font-size: 28px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+            letter-spacing: 2px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* 4 Kolom sesuai permintaan */
+            gap: 30px;
+            padding: 0 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            background: #ffffff;
+            border-radius: 15px;
+            padding: 12px;
+            text-align: center;
+            color: #333;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+
+        .product-card img {
+            width: 100%;
+            aspect-ratio: 3 / 4; /* Ukuran Foto 3x4 */
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 12px;
+        }
+
+        .product-card a {
+            display: block;
+            text-decoration: none;
+            color: #0b5ed7;
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .product-card span {
+            display: block;
+            font-size: 14px;
+            color: #666;
+            font-style: italic;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 1024px) {
+            .product-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            .header-container { padding: 15px 20px; flex-direction: column; gap: 10px; }
+            .product-grid { grid-template-columns: repeat(2, 1fr); padding: 0 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="header-container">
+    <div class="logo-area">
+        <img src="https://drive.google.com/thumbnail?export=view&id=1xrWVIlRFOeZTwemcvSmC8Oz7DsZH1YbG" alt="Logo">
+        <span class="brand-name">Umi Kaureen</span>
+    </div>
+
+    <nav>
+        <ul class="nav-links">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="PROFILE.html">PROFILE</a></li>
+            <li><a href="produk.html">PRODUK</a></li>
+            <li><a href="tentang.html">TENTANG</a></li>
+        </ul>
+    </nav>
+</header>
+
+<h1 class="page-title">KATEGORI PRODUK</h1>
+
+<div class="product-grid">
+
+    <div class="product-card">
+        <img src="https://picsum.photos/300/400?1">
+        <a href="asimo.html">ASIMO</a>
+        <span>Kategori Produk</span>
+    </div>
+
+    <div class="product-card">
+        <img src="https://picsum.photos/300/400?2">
+        <a href="belfoods.html">BELFOODS</a>
+        <span>Kategori Produk</span>
+    </div>
+
+    <div class="product-card">
+        <img src="https://picsum.photos/300/400?3">
+        <a href="benfarm.html">BENFARM</a>
+        <span>Kategori Produk</span>
+    </div>
+
+    <div class="product-card">
+        <img src="https://picsum.photos/300/400?4">
+        <a href="beres.html">BERES</a>
+        <span>Kategori Produk</span>
+    </div>
+
+    <div class="product-card">
+        <img src="https://picsum.photos/300/400?5">
+        <a href="bernardi.html">BERNARDI</a>
+        <span>Kategori Produk</span>
+    </div>
+
+    <div class="product-card">
+        <img src="https://picsum.photos/300/400?6">
+        <a href="bumifood.html">BUMIFOOD</a>
+        <span>Kategori Produk</span>
+    </div>
+
+    <div class="product-card">
+        <img src="https://picsum.photos/300/400?7">
+        <a href="camilan.html">CAMILAN</a>
+        <span>Kategori Produk</span>
+    </div>
+
+    <div class="product-card">
+        <img src="https://picsum.photos/300/400?8">
+        <a href="cedea.html">CEDEA</a>
+        <span>Kategori Produk</span>
+    </div>
+
+    <div class="product-card">
+        <img src="https://picsum.photos/300/400?9">
+        <a href="ciki-wiki.html">CIKI WIKI</a>
+        <span>Kategori Produk</span>
+    </div>
+
+    <div class="product-card">
+        <img src="https://picsum.photos/300/400?10">
+        <a href="fiesta.html">FIESTA</a>
+        <span>Kategori Produk</span>
+    </div>
+
+    <div class="product-card">
+        <img src="https://picsum.photos/300/400?11">
+        <a href="giziplus.html">GIZIPLUS</a>
+        <span>Kategori Produk</span>
+    </div>
+
+    <div class="product-card">
+        <img src="https://picsum.photos/300/400?12">
+        <a href="goldenfarm.html">GOLDENFARM</a>
+        <span>Kategori Produk</span>
+    </div>
+
+    <div class="product-card">
+        <img src="https://picsum.photos/300/400?13">
+        <a href="gorengan.html">GORENGAN</a>
+        <span>Kategori Produk</span>
+    </div>
+
+    <div class="product-card">
+        <img src="https://picsum.photos/300/400?14">
+        <a href="harvest.html">HARVEST</a>
+        <span>Kategori Produk</span>
+    </div>
+
+    <div class="product-card">
+        <img src="https://picsum.photos/300/400?15">
+        <a href="hewani.html">HEWANI</a>
+        <span>Kategori Produk</span>
+    </div>
+
+    <div class="product-card">
+        <img src="https://picsum.photos/300/400?16">
+        <a href="home.html">HOME</a>
+        <span>Kategori Produk</span>
+    </div>
+
+    <div class="product-card">
+        <img src="https://picsum.photos/300/400?16">
+        <a href="indomina.html">INDOMINA</a>
+        <span>Kategori Produk</span>
+    </div>
+
+    <div class="product-card">
+        <img src="https://picsum.photos/300/400?17">
+        <a href="kamil.html">KAMIL</a>
+        <span>Kategori Produk</span>
+    </div>
+
+    <div class="product-card">
+        <img src="https://picsum.photos/300/400?18">
+        <a href="kanzler.html">KANZLER</a>
+        <span>Kategori Produk</span>
+    </div>
+
+    <div class="product-card">
+        <img src="https://picsum.photos/300/400?19">
+        <a href="mantul.html">MANTUL</a>
+        <span>Kategori Produk</span>
+    </div>
+
+    <div class="product-card">
+        <img src="https://picsum.photos/300/400?20">
+        <a href="mitraku.html">MITRAKU</a>
+        <span>Kategori Produk</span>
+    </div>
+
+    <div class="product-card">
+        <img src="https://picsum.photos/300/400?21">
+        <a href="okey.html">OKEY</a>
+        <span>Kategori Produk</span>
+    </div>
+
+    <div class="product-card">
+        <img src="https://picsum.photos/300/400?22">
+        <a href="pak-den.html">PAK DEN</a>
+        <span>Kategori Produk</span>
+    </div>
+
+    <div class="product-card">
+        <img src="https://picsum.photos/300/400?23">
+        <a href="pastry-kulit.html">PASTRY DAN KULIT</a>
+        <span>Kategori Produk</span>
+    </div>
+
+    <div class="product-card">
+        <img src="https://picsum.photos/300/400?24">
+        <a href="salam.html">SALAM</a>
+        <span>Kategori Produk</span>
+    </div>
+
+    <div class="product-card">
+        <img src="https://picsum.photos/300/400?25">
+        <a href="sayur-buah.html">SAYUR DAN BUAH POLOS</a>
+        <span>Kategori Produk</span>
+    </div>
+
+    <div class="product-card">
+        <img src="https://picsum.photos/300/400?26">
+        <a href="sobat.html">SOBAT</a>
+        <span>Kategori Produk</span>
+    </div>
+
+    <div class="product-card">
+        <img src="https://picsum.photos/300/400?27">
+        <a href="so-good.html">SO GOOD</a>
+        <span>Kategori Produk</span>
+    </div>
+
+    <div class="product-card">
+        <img src="https://picsum.photos/300/400?28">
+        <a href="sohib.html">SOHIB</a>
+        <span>Kategori Produk</span>
+    </div>
+
+    <div class="product-card">
+        <img src="https://picsum.photos/300/400?29">
+        <a href="sunnygold.html">SUNNYGOLD</a>
+        <span>Kategori Produk</span>
+    </div>
+
+    <div class="product-card">
+        <img src="https://picsum.photos/300/400?30">
+        <a href="uenak.html">UENAK</a>
+        <span>Kategori Produk</span>
+    </div>
+
+    <div class="product-card">
+        <img src="https://picsum.photos/300/400?31">
+        <a href="umiami.html">UMIAMI</a>
+        <span>Kategori Produk</span>
+    </div>
+
+    <div class="product-card">
+        <img src="https://picsum.photos/300/400?32">
+        <a href="vitalia.html">VITALIA</a>
+        <span>Kategori Produk</span>
+    </div>
+
+    <div class="product-card">
+        <img src="https://picsum.photos/300/400?33">
+        <a href="weiwang.html">WEIWANG</a>
+        <span>Kategori Produk</span>
+    </div>
+
+    <div class="product-card">
+        <img src="https://picsum.photos/300/400?34">
+        <a href="yomas.html">YOMAS</a>
+        <span>Kategori Produk</span>
+    </div>
+
+    <div class="product-card">
+        <img src="https://picsum.photos/300/400?35">
+        <a href="zaitun.html">ZAITUN</a>
+        <span>Kategori Produk</span>
+    </div>
+
+</div>
+
+</body>
+</html>
