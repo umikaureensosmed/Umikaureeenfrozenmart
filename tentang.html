@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Kami - Umi Kaureen</title>
+    <style>
+        /* --- RESET & BASE --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #0b5ed7;
+            /* Efek Salju Bergerak */
+            background-image: 
+                radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.2) 1.5px, transparent 1.5px),
+                radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.1) 2px, transparent 2px),
+                linear-gradient(180deg, #0b5ed7, #084298);
+            background-size: 100px 100px, 200px 200px, 100% 100%;
+            animation: snowMove 12s linear infinite;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+        }
+
+        @keyframes snowMove {
+            from { background-position: 0 0, 0 0, 0 0; }
+            to { background-position: 100px 100px, 200px 400px, 0 0; }
+        }
+
+        /* --- HEADER & NAVBAR --- */
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(5px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-area img {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            object-fit: cover;
+        }
+
+        .brand-name {
+            font-weight: bold;
+            font-size: 1.3rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 10px;
+        }
+
+        .nav-links li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px 20px;
+            position: relative;
+            transition: 0.3s;
+            z-index: 1;
+        }
+
+        /* EFEK STABILO */
+        .nav-links li a::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: #a3d8ff;
+            transition: 0.3s ease;
+            z-index: -1;
+            border-radius: 4px;
+        }
+
+        .nav-links li a:hover::before { width: 100%; }
+        .nav-links li a:hover { color: #084298; }
+
+        /* --- CONTACT CONTENT --- */
+        .contact-container {
+            flex: 1;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 0 20px;
+            animation: fadeIn 1s ease;
+        }
+
+        .contact-card {
+            background: rgba(255, 255, 255, 0.95);
+            color: #333;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+
+        .contact-card h2 {
+            margin-bottom: 30px;
+            color: #0b5ed7;
+            font-size: 2rem;
+            border-bottom: 2px solid #a3d8ff;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        .info-box {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 15px;
+            background: #f0f7ff;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        .info-box:hover {
+            transform: translateX(10px);
+            background: #e1efff;
+        }
+
+        .info-box .icon {
+            font-size: 24px;
+            background: #0b5ed7;
+            color: white;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        .info-text h4 {
+            font-size: 14px;
+            color: #0b5ed7;
+            text-transform: uppercase;
+        }
+
+        .info-text p {
+            font-size: 16px;
+            font-weight: bold;
+            color: #444;
+        }
+
+        /* SOSMED BUTTONS */
+        .sosmed-list {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .sosmed-item {
+            text-decoration: none;
+            color: white;
+            background: #0b5ed7;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .sosmed-item.wa { background: #25d366; } /* Warna Hijau WA */
+        .sosmed-item.ig { background: #e1306c; } /* Warna IG */
+
+        .sosmed-item:hover {
+            transform: scale(1.1);
+            filter: brightness(1.1);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.4);
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .header-container { flex-direction: column; gap: 15px; }
+            .contact-card { padding: 25px; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="header-container">
+    <div class="logo-area">
+        <img src="https://drive.google.com/thumbnail?export=view&id=1xrWVIlRFOeZTwemcvSmC8Oz7DsZH1YbG" alt="Logo">
+        <span class="brand-name">Umi Kaureen</span>
+    </div>
+
+    <nav>
+        <ul class="nav-links">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="PROFILE.html">PROFILE</a></li>
+            <li><a href="produk.html">PRODUK</a></li>
+            <li><a href="tentang.html">TENTANG</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="contact-container">
+    <div class="contact-card">
+        <h2>HUBUNGI KAMI</h2>
+        
+        <div class="contact-info">
+            <div class="info-box">
+                <div class="icon">📞</div>
+                <div class="info-text">
+                    <h4>Telepon / WhatsApp</h4>
+                    <p>+62 812-3456-7890</p>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <div class="icon">📍</div>
+                <div class="info-text">
+                    <h4>Alamat Toko</h4>
+                    <p>Jl. Frozen Utama No. 88, Kec. Makanan, Kota Dingin</p>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <div class="icon">✉️</div>
+                <div class="info-text">
+                    <h4>Email Bisnis</h4>
+                    <p>halo@umikaureen.com</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="sosmed-list">
+            <a href="https://wa.me/6281234567890" class="sosmed-item wa" target="_blank">WhatsApp Kami</a>
+            <a href="https://instagram.com/umikaureen" class="sosmed-item ig" target="_blank">Instagram</a>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <p>© 2026 Frozen Food Mart Umi Kaureen. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
